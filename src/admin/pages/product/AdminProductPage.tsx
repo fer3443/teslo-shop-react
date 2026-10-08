@@ -50,7 +50,6 @@ export const AdminProductPage = () => {
       product={product}
       onSubmit={handleSubmitForm}
       isSubmitting={productMutation.isPending}
-      isSuccess={productMutation.isSuccess}
     />
   )
 };

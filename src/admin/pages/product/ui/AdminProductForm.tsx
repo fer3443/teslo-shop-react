@@ -16,7 +16,6 @@ interface Props {
     product: Product & { files?: File[] }
   ) => Promise<void>;
   isSubmitting: boolean;
-  isSuccess: boolean;
 }
 const availableSizes: Size[] = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
@@ -25,7 +24,7 @@ interface FormInputs extends Product {
 }
 
 
-export const AdminProductForm = ({ title, subTitle, product, onSubmit, isSubmitting, isSuccess }: Props) => {
+export const AdminProductForm = ({ title, subTitle, product, onSubmit, isSubmitting }: Props) => {
   const [dragActive, setDragActive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const {
@@ -35,7 +34,6 @@ export const AdminProductForm = ({ title, subTitle, product, onSubmit, isSubmitt
     getValues,
     setValue,
     watch,
-    reset
   } = useForm<FormInputs>({
     defaultValues: product
   });
